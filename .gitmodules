@@ -1,0 +1,6 @@
+[submodule "libraries/klangwellen"]
+	path = libraries/klangwellen
+	url = https://github.com/dennisppaul/klangwellen.git
+[submodule "libraries/umgebung"]
+	path = libraries/umgebung
+	url = https://github.com/dennisppaul/umgebung.git
