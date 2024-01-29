@@ -7,7 +7,7 @@ A Series of Examples for KlangWellen using Umgebung
 to build and run examples navigate to an example folder and execute CMake commands:
 
 ```
-$ cd simple-example/
+$ cd ./examples/simple-example/
 $ cmake -B build .
 $ cmake --build build --target run
 ```
