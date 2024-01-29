@@ -2,12 +2,15 @@ cmake_minimum_required(VERSION 3.12)
 
 project(simple-example)
 
-set(UMGEBUNG_PATH "$ENV{HOME}/Documents/dev/umgebung/git/umgebung")
-include_directories("../../klangwellen/include")
+set(UMGEBUNG_PATH   "../libraries/umgebung/")            # point to umgebung library
+include_directories("../libraries/klangwellen/include")  # add klangwellen library
 
-# set(UMGEBUNG_PATH   "../libraries/umgebung/") # point to umgebung library
-# include_directories("../libraries/klangwellen/include")                    # add klangwellen library
-
+# --------------------- ADAPT PATHS ABOVE ACCORDINGLY --------------------- #
+# ( e.g for development )
+#
+# set(UMGEBUNG_PATH "$ENV{HOME}/Documents/dev/umgebung/git/umgebung")
+# include_directories("../../klangwellen/include")
+#
 # --------------------- ADAPT PATHS ABOVE ACCORDINGLY --------------------- #
 
 option(DISABLE_GRAPHICS "Disable graphic output" OFF)
