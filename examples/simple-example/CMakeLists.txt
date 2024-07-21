@@ -17,7 +17,7 @@ option(DISABLE_GRAPHICS "Disable graphic output" OFF)
 option(DISABLE_VIDEO "Disable video output" ON)
 option(DISABLE_AUDIO "Disable audio output + input" OFF)
 
-include(${UMGEBUNG_PATH}/cmake/pre.cmake)                   # prepare umgebung ( should happen before `add_executable` )
+include(${UMGEBUNG_PATH}/cmake/default-pre.cmake)                   # prepare umgebung ( should happen before `add_executable` )
 
 # add source + header files from this directory
 

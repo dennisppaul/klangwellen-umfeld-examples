@@ -2,3 +2,4 @@ build/
 examples/exponential-moving-average/.idea/
 examples/exponential-moving-average/cmake-build-debug
 **/cmake-build-debug/
+.idea/

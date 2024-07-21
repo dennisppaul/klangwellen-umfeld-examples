@@ -1,10 +1,38 @@
 #include "Umgebung.h"
 
 #define KLANG_SAMPLES_PER_AUDIO_BLOCK DEFAULT_FRAMES_PER_BUFFER
-#define KLANG_SAMPLING_RATE DEFAULT_AUDIO_SAMPLE_RATE
+#define KLANG_SAMPLE_RATE DEFAULT_AUDIO_SAMPLE_RATE
 
 #include "ADSR.h"
 #include "Reverb.h"
+#include "Wavetable.h"
+
+#include "ADSR.h"
+#include "BeatDSP.h"
+#include "Clamp.h"
+#include "Delay.h"
+#include "Envelope.h"
+#include "EnvelopeFollower.h"
+#include "ExponentialMovingAverage.h"
+#include "Filter.h"
+#include "FilterLowPassMoogLadder.h"
+#include "FilterVowelFormant.h"
+#include "Gain.h"
+#include "KlangWellen.h"
+#include "Note.h"
+#include "Ramp.h"
+#include "Resonator.h"
+#include "Reverb.h"
+#include "RootMeanSquare.h"
+#include "SAM.h"
+#include "Sampler.h"
+#include "Scale.h"
+#include "ScaleCollection.h"
+#include "Signal.h"
+#include "Stream.h"
+#include "Trigger.h"
+#include "Vocoder.h"
+#include "Waveshaper.h"
 #include "Wavetable.h"
 
 using namespace umgebung;
@@ -14,9 +42,9 @@ using namespace std;
 class UmgebungApp : public PApplet {
 
     klangwellen::ADSR      fADSR;
-    klangwellen::Wavetable fWavetable{1024, klangwellen::KlangWellen::DEFAULT_SAMPLING_RATE};
+    klangwellen::Wavetable fWavetable{1024, klangwellen::KlangWellen::DEFAULT_SAMPLE_RATE};
     klangwellen::Reverb    fReverb;
-    
+
     bool fIsPlaying = false;
 
     void settings() {
@@ -42,8 +70,8 @@ class UmgebungApp : public PApplet {
     void audioblock(float** input, float** output, int length) {
         for (int i = 0; i < length; i++) {
             float mSample = fWavetable.process();
-            mSample = fADSR.process(mSample);
-            mSample = fReverb.process(mSample);
+            mSample       = fADSR.process(mSample);
+            mSample       = fReverb.process(mSample);
             for (int j = 0; j < audio_output_channels; ++j) {
                 output[j][i] = mSample;
             }
@@ -61,6 +89,6 @@ class UmgebungApp : public PApplet {
     }
 };
 
-PApplet *umgebung::instance() {
+PApplet* umgebung::instance() {
     return new UmgebungApp();
 }

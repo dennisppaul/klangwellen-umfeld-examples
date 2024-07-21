@@ -1,7 +1,7 @@
 #include "Umgebung.h"
 
 #define KLANG_SAMPLES_PER_AUDIO_BLOCK DEFAULT_FRAMES_PER_BUFFER
-#define KLANG_SAMPLING_RATE DEFAULT_AUDIO_SAMPLE_RATE
+#define KLANG_SAMPLE_RATE DEFAULT_AUDIO_SAMPLE_RATE
 
 #include "DrawLib.h"
 
@@ -19,7 +19,7 @@ using namespace std;
 class UmgebungApp : public PApplet {
 
     klangwellen::ADSR                     fADSR;
-    klangwellen::Wavetable                fWavetable{1024, klangwellen::KlangWellen::DEFAULT_SAMPLING_RATE};
+    klangwellen::Wavetable                fWavetable{1024, klangwellen::KlangWellen::DEFAULT_SAMPLE_RATE};
     klangwellen::Reverb                   fReverb;
     klangwellen::ExponentialMovingAverage fEMA{0.0005};
     RootMeanSquare                        fRMS{1024};
