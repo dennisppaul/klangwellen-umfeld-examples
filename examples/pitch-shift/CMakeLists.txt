@@ -1,23 +1,15 @@
 cmake_minimum_required(VERSION 3.12)
 
-project(simple-example)
+project(pitch-shift)
 
 set(UMGEBUNG_PATH    "../../libraries/umgebung/")    # path to umgebung library
 set(KLANGWELLEN_PATH "../../libraries/klangwellen/") # path to klangwellen library
-
-# --------------------- ADAPT PATHS ABOVE ACCORDINGLY --------------------- #
-# ( e.g for development )
-#
-# set(UMGEBUNG_PATH "$ENV{HOME}/Documents/dev/umgebung/git/umgebung")
-# set(KLANGWELLEN_PATH "../../../klangwellen/include")
-#
-# --------------------- ADAPT PATHS ABOVE ACCORDINGLY --------------------- #
 
 option(DISABLE_GRAPHICS "Disable graphic output" OFF)
 option(DISABLE_VIDEO "Disable video output" ON)
 option(DISABLE_AUDIO "Disable audio output + input" OFF)
 
-include(${UMGEBUNG_PATH}/cmake/default-pre.cmake)    # prepare umgebung ( should happen before `add_executable` )
+include(${UMGEBUNG_PATH}/cmake/default-pre.cmake)           # prepare umgebung e.g set compiler and architecure ( should happen before `add_executable` )
 
 # add source + header files from this directory
 
