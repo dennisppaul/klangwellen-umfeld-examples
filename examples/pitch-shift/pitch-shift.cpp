@@ -29,8 +29,8 @@ class UmgebungApp : public PApplet {
     }
 
     void draw() {
-        background(1);
-        fill(0);
+        background(1.0f);
+        fill(0.0f);
         noStroke();
         if (fIsPitchShifting) {
             rect(width / 2 - 50, height / 2 - 50, 100, 100);
