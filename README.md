@@ -1,6 +1,4 @@
-# klangwellen-umgebung-examples
-
-A Series of Examples for KlangWellen using Umgebung
+A Series of Examples for Klangwellen using Umfeld
 
 ## build and run examples
 
