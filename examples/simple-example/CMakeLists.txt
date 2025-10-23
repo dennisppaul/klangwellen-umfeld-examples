@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.12)
 
 project(simple-example)
 
-set(UMGEBUNG_PATH    "../../libraries/umgebung/")    # path to umgebung library
+set(UMGEBUNG_PATH    "../../../umfeld")              # path to umgebung library
 set(KLANGWELLEN_PATH "../../libraries/klangwellen/") # path to klangwellen library
 
 # --------------------- ADAPT PATHS ABOVE ACCORDINGLY --------------------- #
